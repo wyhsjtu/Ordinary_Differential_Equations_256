@@ -1,0 +1,231 @@
+\documentclass{article}
+\usepackage{enumerate}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{geometry}
+\usepackage{color}
+\usepackage{bm}
+\usepackage{indentfirst}
+\usepackage{multirow}
+\usepackage{hyperref}
+
+\begin{document}\large
+%\vspace*{0.25cm}
+\hrulefill
+
+\thispagestyle{empty}
+
+\begin{center}
+\begin{large}
+\sc{\Large{UM--SJTU Joint Institute} 
+\\ 
+\Large{\textbf{VV256\,\, Honors Calculus IV}}\\ %Enter the course info.
+\Large{Assignment 2}\\%Assignment NO.
+\large{Critical Review of the Article: \textit{Special Solutions of the Riccati Equation}.}\\
+\vspace{0.3em}
+Name: Wang Yuhao \,\, ID: 517370910060}
+\end{large}
+
+\hrulefill
+
+\end{center}
+\par
+%%--------Objective-----------
+\section{Objective}
+This paper focuses on providing a new method for finding solutions of the Riccati differential equation 
+\begin{equation}
+y ^ { \prime } = P ( x ) + Q ( x ) y + R ( x ) y ^ { 2 }
+\end{equation}
+\label{fund_eq}
+For this equation, $y, P, Q$ and
+$R$ are real functions of the real argument $x$. This equation can be considered as the lowest order non-linear approximation to the derivative of a function.
+
+However,  solutions to the
+general Riccati equation are not available, and only special cases can be treated. This paper is focused on  finding new solutions of Riccati equation by utilizing relations between the coefficient functions $P(x), Q(x)$ and $R(x)$ for which the above equation can be solved in closed form.
+
+%%---------*** One conventional method----
+\section{A Conventional Approach}
+The conventional approach of finding the solution of a Riccati equation is to first find a particular solution, $y_P(x)$ beforehead. Using the substitution $y = - u ^ { \prime } / ( u R )$, we get Eq.(\ref{fund_eq}) can be converted to the equation below:
+\begin{equation}
+u ^ { \prime \prime } - \left[ Q ( x ) + \frac { R ^ { \prime } ( x ) } { R ( x ) } \right] u ^ { \prime } + P ( x ) R ( x ) u = 0
+\end{equation}
+\label{conv}
+
+Then the general solution of Eq.(\ref{conv}) is $y = y _ { p } + 1 / w$ where $w$ is the general solution of the associated linear ODE:
+\begin{equation}
+w ^ { \prime } + \left[ Q ( x ) + 2 R ( x ) y _ { p } \right] w + R ( x ) = 0
+\end{equation}
+which does not contain $P(x)$. Solving this equation, we get
+$$w = w _ { 0 } e ^ { - \phi ( x ) } -e ^ { - \phi ( x ) } \int _ { x _ { 0 } } ^ { x } R ( \xi ) e ^ { \phi ( \xi ) } d \xi$$ 
+where $\phi ( x ) = \int _ { x _ { 0 } } ^ { x } \left[ Q ( \xi ) + 2 R ( \xi ) y _ { p } \right] d \xi $.
+\\
+From the relation above, we get $w _ { 0 } = \frac { 1 } { y _ { 0 } - y _ { p 0 } }$.	Therefore the general solution is given:
+\begin{equation}
+y = y _ { p } + e ^ { \phi ( x ) } \left[ \frac { 1 } { y _ { 0 } - y _ { p0 } } - \int _ { x _ { 0 } } ^ { x } R ( \xi ) e ^ { \phi ( \xi ) } d \xi \right] ^ { - 1 }
+\end{equation}
+
+
+
+
+%%---------Methods------------
+\section{Solution Method}
+\begin{enumerate}
+\item Begin with the substitution $y = - u ^ { \prime } / ( u R )$ Eq.(\ref{conv}) as stated above:
+$$u ^ { \prime \prime } - \left[ Q ( x ) + \frac { R ^ { \prime } ( x ) } { R ( x ) } \right] u ^ { \prime } + P ( x ) R ( x ) u = 0,$$ 
+
+we introduce another two substitutions:
+$$
+\left\{
+             \begin{array}{lr}
+             a ( x ) = Q ( x ) + \frac { R ^ { \prime } ( x ) } { R ( x ) } &  \\
+             ~\\
+             b ( x ) = P ( x ) R ( x )\\
+             
+             \end{array}
+\right.
+$$
+
+Then Eq.(\ref{conv}) can be expressed as 
+\begin{equation}
+\frac { d ^ { 2 } u } { d x ^ { 2 } } + a ( x ) \frac { d u } { d x } + b ( x ) u = 0
+\end{equation}
+\label{odeu}
+
+\item Consider an arbitrary function of $x$ such that $z \equiv f ( x )$, then we get:
+\begin{equation}
+\frac { d u } { d x } = \frac { d u } { d z } \frac { d z } { d x }
+\end{equation}
+\begin{equation}
+\frac { d ^ { 2 } u } { d x ^ { 2 } } = \frac { d ^ { 2 } z } { d x ^ { 2 } } \frac { d u } { d z } + \left( \frac { d z } { d x } \right) ^ { 2 } \frac { d ^ { 2 } u } { d z ^ { 2 } }
+\end{equation}
+
+Plug results Eq.(6)\&(7) into Eq.(5), get
+\begin{equation}
+\left( \frac { d z } { d x } \right) ^ { 2 } \frac { d ^ { 2 } u } { d z ^ { 2 } } + \left[ \frac { d ^ { 2 } z } { d x ^ { 2 } } + a ( x ) \frac { d z } { d x } \right] \frac { d u } { d z } + b ( x ) u = 0
+\end{equation}
+
+Dividing Eq.(8) by $\left( \frac { d z } { d x } \right) ^ { 2 }$, obtain:
+\begin{equation}
+\frac { d ^ { 2 } u } { d z ^ { 2 } } + \left[ \frac { \frac { d ^ { 2 } z } { d x ^ { 2 } } + a ( x ) \frac { d z } { d x } } { \left( \frac { d z } { d x } \right) ^ { 2 } } \right] \frac { d u } { d z } + \left[ \frac { b ( x ) } { \left( \frac { d z } { d x } \right) ^ { 2 } } \right] u = 0
+\end{equation}
+\begin{equation}
+\equiv \frac { d ^ { 2 } u } { d z ^ { 2 } } + 2 A \frac { d u } { d z } + B u = 0
+\end{equation}
+provided $dz/dx$ is not equal to 0.
+
+Thus, the obtained equation can easily be solved in
+closed form if A and B are either constants or if they are some special functions for which the closed-form solutions to (10) are known. Discussion of $A$ and $B$ values will be discussed later.
+
+\item If $b(x)$ is positive, $i.e.$, $P(x)R(x)>0$, we get
+$z$ as
+\begin{equation}
+z \equiv f(x) \equiv z _ { 0 } + s \int _ { x _ { 0 } } ^ { x } \sqrt { \frac { b ( \xi ) } { B } } d \xi
+\end{equation}
+where $s = \pm 1$. Further let $c=b/B$, get
+\begin{equation}
+\frac { d z } { d x } = s c ^ { 1 / 2 } \neq 0	
+\end{equation}
+\begin{equation}
+\frac { d ^ { 2 } z } { d x ^ { 2 } } = \frac { c ^ { \prime } } { 2 s c ^ { - 1 / 2 } }
+\end{equation}
+
+Now use Eq.(12) \& (13) to compare coefficients of $du/dz$, get:
+\begin{equation}
+\frac { c ^ { \prime } } { 2 s c ^ { 1 / 2 } } + a s c ^ { 1 / 2 } - 2 A c = 0
+\end{equation}
+or,
+\begin{equation}
+\left( \frac { b } { B } \right) ^ { \prime } + 2 a \left( \frac { b } { B } \right) - 4 A s \left( \frac { b } { B } \right) ^ { 3 / 2 } = 0
+\end{equation}
+
+Now consider two cases:
+
+\item \textbf{$A$ and $B$ are constants.} Then Eq.(15) can be written as 
+$$b ^ { \prime } + 2 a b - \frac { 4 s A } { \sqrt { B } } b ^ { 3 / 2 } = 0$$
+or
+\begin{equation}
+\frac { b ^ { \prime } ( x ) + 2 a ( x ) b ( x ) } { [ b ( x ) ] ^ { 3 / 2 } } = \frac { 4 s A } { \sqrt { B } }
+\end{equation}
+
+Substituting back the original expressions for $a(x)$ and $b(x)$, we get the final result:
+\begin{equation}
+\frac { [ P ( x ) R ( x ) ] ^ { \prime } - 2 \left[ Q ( x ) + R ^ { \prime } ( x ) / R ( x ) \right] P ( x ) R ( x ) } { [ P ( x ) R ( x ) ] ^ { 3 / 2 } } = \frac { 4 s A } { \sqrt { B } }
+\end{equation}
+
+In this case, the particular solution to Eq.(10) is
+\begin{equation}
+y _ { p } = - \frac { s \lambda } { \sqrt { B } } \sqrt { \frac { P ( x ) } { R ( x ) } }
+\end{equation}
+
+where $\lambda$ is any of the roots to the polynomial $\lambda ^ { 2 } + 2 A \lambda + B = 0 , (A ^ { 2 } \geq B > 0)$.
+
+After plugging $y_p$ into the expression for the general solution of Riccati equation, we find:
+\begin{equation}
+y = - \frac { s \lambda } { \sqrt { B } } \sqrt { \frac { P ( x ) } { R ( x ) } } + e ^ { \phi ( x ) } \left[ \frac { 1 } { y _ { 0 } + \frac { s \lambda } { \sqrt { B } } \sqrt { \frac { P ( 0 ) } { R ( 0 ) } } } - \int _ { x _ { 0 } } ^ { x } R ( \xi ) e ^ { \phi ( \xi ) } d \xi \right] ^ { - 1 }
+\end{equation}
+
+with $y_0$ as the initial condition for $y$ and 
+\begin{equation}
+\phi ( x ) = \int _ { x _ { 0 } } ^ { x } \left[ Q ( \xi ) - \frac { 2 s \lambda } { \sqrt { B } } \sqrt { P ( \xi ) R ( \xi ) } \right] d \xi
+\end{equation}
+as the integrating exponent.
+
+\item \textbf{A=0 and B=B(x)} For this case, Eq.(14) can be reduced to the simple equation $c'=-2ac$, where $c=b/B$. Thus, Eq.(15) gives:
+\begin{equation}
+\frac { b } { B } = \left( \frac { b } { B } \right) _ { 0 } \exp \left( - 2 \int _ { x _ { 0 } } ^ { x } a d x \right)
+\end{equation}
+
+Then for this case, a simple relation between the second order ODE for u and the one-dimensional
+Schr\"{o}dinger equation exists. 
+
+With $a(x)$ and $b(x)$ given by the original Riccati Equation and $B(x)$ as an arbitrary function, Eq.(10) gives:
+\begin{equation}
+\frac { d ^ { 2 } u } { d z ^ { 2 } } + B ( z ) u = 0
+\end{equation}
+where $z$ is given by Eq.(11). The particular solution $y_p$ can be obtained by Eq.(2), $i.e.$, the result of the first substitution. Therefore, many of the known exact solutions to the
+Schr\"{o}dinger equation for different potentials can be utilized to arrive at the solutions to various types of new special cases of Riccati equation.
+
+When applied to the multidimensional GPE of BECs, the case with constant A
+and B yields closed form solutions for the chirp function a(t) of the matter wave:
+\begin{equation}
+a ( t ) = - \frac { s \lambda } { \sqrt { B } } \sqrt { - \frac { \alpha ( t ) } { 2 \beta ( t ) } } + e ^ { \phi ( t ) } \left[ \frac { 1 } { a _ { 0 } + \frac { s \lambda } { \sqrt { B } } \sqrt { - \frac { \alpha _ { 0 } } { 2 \beta _ { 0 } } } } + 2 \int _ { 0 } ^ { t } \beta ( \tau ) e ^ { \phi ( \tau ) } d \tau \right] ^ { - 1 }
+\end{equation}
+given that the following relation holds between the diffraction coefficient $\beta$ and the strength of the parabolic potential $\alpha$:
+\begin{equation}
+\sqrt { - \frac { \beta } { \alpha } } = \sqrt { - \frac { \beta _ { 0 } } { \alpha _ { 0 } } } - \frac { 2 \sqrt { 2 } s A } { \sqrt { B } } \int _ { 0 } ^ { t } \beta d t
+\end{equation}
+
+with 
+\begin{equation}
+\phi ( t ) = - 2 \sqrt { 2 } s \lambda \int _ { 0 } ^ { t } \sqrt { - \alpha ( \tau ) \beta ( \tau ) } d \tau / \sqrt { B }.
+\end{equation}
+
+%%Add sth. about the SE conditioon
+
+
+
+Moreover, if the solutions $u_n(z)$ is known, then the solutions to the Riccati equation can be given as $y _ { n } ( x ) = - u _ { n } ^ { \prime } / \left( u _ { n } R \right)$. 
+
+
+
+\end{enumerate}
+
+
+
+
+
+
+%%------------Results-------
+\section{Results}
+This article provides a way to solve the Riccati equation of the form $y ^ { \prime } = P ( x ) + Q ( x ) y + R ( x ) y ^ { 2 }$ in the closed form, on the basis that there exists some relationship betweeen $P(x), Q(x)$ and $R(x)$. The two discussed cases are based on this principle.  
+
+
+However, the restriction for this method is quite tough. Only models as listed above can apply this method, and in fact, its calculation is very critical. The three examples of application of this approach 
+
+
+\section{References}
+$\bullet$ Anas Al Vastami, $et.al.$. \textit{Special solutions of the Riccati equation with applications to the Gross-Pitaevskii Nonlinear PDE}. Electronic Journal of Differential Equations, $Vol. 2010(2010)$, $No. 66$, $pp. 1-10$.
+
+\end{document}
